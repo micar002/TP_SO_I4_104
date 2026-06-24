@@ -1,0 +1,37 @@
+Apellido y nombre de los alumnos que participaron:
+
+ALFA: Apellido Nombre
+BETA: Suarez Moreno Luca
+GAMMA: Micaela Ramirez
+
+A- ¿Qué color de fondo tiene su página en el TESTING?
+
+En la rama TESTING el color de fondo queda en BLUE, porque BETA modificó el archivo estilo.css y cambió el background a blue.
+
+C- ¿Qué color de fondo tiene su página en el MASTER?
+
+En MASTER queda el color que haya resultado del último merge realizado por GAMMA. Si primero se fusionó DESARROLLO y luego TESTING, el color final debería quedar en BLUE.
+
+D- ¿Qué favicon quedó en el MASTER, el de ALFA o el de BETA?
+
+En MASTER queda el favicon que se haya conservado al resolver el merge. Si BETA subió su favicon después y ese cambio fue aceptado en el merge, queda el favicon de BETA.
+
+E- ¿Algún integrante tuvo problemas al hacer el push?
+
+Sí, hubo problemas al inicio al tener el repositorio desactualizado
+
+F- ¿Qué problemas surgieron?
+
+El problema principal fue que intentamos modificar el mismo archivo index.html en la misma rama. Al intentar hacer push.
+
+G- ¿Qué soluciones pueden aplicar y cuál sería la consecuencia de cada solución adoptada?
+
+Una solución es hacer git pull origin TESTING antes del push. Esto trae los cambios remotos y permite unirlos con los cambios locales. La consecuencia es que, si hay conflicto, se debe resolver manualmente.
+
+H- ¿Qué sucede si cada uno utiliza el push -f?
+
+Si cada integrante usa push -f, puede sobrescribir el trabajo de los demás.
+
+I- ¿Qué debo hacer para que el index.html tenga todos los <p> de los puntos 18, 19 y 20 en DESARROLLO?
+
+Se debe actualizar la rama TESTING con git pull, resolver los conflictos si aparecen y dejar dentro de index.html los tres párrafos: el de ALFA, el de BETA y el de GAMMA. Luego se hace commit y push en TESTING. Finalmente, se cambia a la rama DESARROLLO, se actualiza con git pull origin DESARROLLO, se hace merge con TESTING y se sube con git push origin DESARROLLO.
